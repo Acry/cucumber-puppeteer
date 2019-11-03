@@ -1,0 +1,19 @@
+{
+  "name": "puppeteer-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js -f json:cucumber_report.json || true",
+    "test:report": "node report.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cucumber": "^6.0.3",
+    "cucumber-html-reporter": "^5.0.2",
+    "puppeteer-core": "^2.0.0"
+  }
+}
