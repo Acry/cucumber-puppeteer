@@ -7,8 +7,12 @@
     "test": "cucumber-js -f json:cucumber_report.json || true",
     "test:report": "node report.js"
   },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Acry/cucumber-puppeteer"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Carsten Holtkamp",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
