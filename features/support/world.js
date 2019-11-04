@@ -34,7 +34,7 @@ class LogInWorld {
     await this.page.click(BUTTON_SELECTOR);
   }
   async checkStatus() {
-    const text = await this.page.evaluate(async () => document.querySelector('body > div.position-relative.js-header-wrapper > header > div.Header-item.position-relative.mr-0.d-none.d-lg-flex > details > details-menu > div.header-nav-current-user.css-truncate > a').textContent);
+    const text = await this.page.evaluate( async () => document.querySelector('a.user-profile-link').textContent);
     expect(text).to.eql('Signed in as Acry');
   }
   async closeGitHub() {
