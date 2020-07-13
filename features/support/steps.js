@@ -1,6 +1,7 @@
-const { Given, When, Then, After, Before } = require("cucumber");
+const { Given, When, Then, After, Before, setDefaultTimeout} = require("cucumber");
+setDefaultTimeout(60 * 1000);
 
-Before(async function(testCase) {
+Before(async function() {
   return await this.openLoginPage();
 });
 After(async function() {

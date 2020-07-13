@@ -6,7 +6,8 @@ const CREDS = require('./creds');
 const PAGE = 'https://github.com/login'
 const USERNAME_SELECTOR = '#login_field';
 const PASSWORD_SELECTOR = '#password';
-const BUTTON_SELECTOR = '#login > form > div.auth-form-body.mt-3 > input.btn.btn-primary.btn-block';
+// const BUTTON_SELECTOR = '#login > form > div.auth-form-body.mt-3 > input.btn.btn-primary.btn-block';
+const BUTTON_SELECTOR = 'input.btn.btn-primary.btn-block';
 
 class LogInWorld {
     constructor() {
@@ -34,6 +35,9 @@ class LogInWorld {
     await this.page.click(BUTTON_SELECTOR);
   }
   async checkStatus() {
+    await this.page.waitForNavigation({
+      waitUntil: 'networkidle0',
+    });
     const text = await this.page.evaluate( async () => document.querySelector('a.user-profile-link').textContent);
     expect(text).to.eql('Signed in as Acry');
   }
@@ -42,4 +46,3 @@ class LogInWorld {
   }
 }
 setWorldConstructor(LogInWorld);
-
